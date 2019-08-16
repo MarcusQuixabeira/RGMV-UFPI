@@ -40,6 +40,11 @@ body {
   background-color:rgba(0, 0, 0, 0.924);
 }
 
+.main-navigation .main-nav ul li a, .menu-toggle, .main-navigation .mobile-bar-items a {
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -122,3 +127,21 @@ div {
     font-size: 17px;
     line-height: 2.17;
 }
+
+.menu-toggle {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+body {
+    line-height: 1.8;
+    background-color: #ffffff;
+    color: #666666;
+}
+body, button, input, select, textarea {
+    font-family: "PT Serif", serif;
+    font-size: 16px;
+}
+
