@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
+
 class Institution(models.Model):
   name = models.CharField(max_length=50)
   short_name = models.CharField(max_length=20)
@@ -13,6 +14,7 @@ class Researcher(models.Model):
   last_name = models.CharField(max_length=100)
   email = models.EmailField()
   bio = models.TextField(max_length=500)
+  ensino = models.CharField(max_length=500)
   lattes_link = models.CharField(max_length=500)
   facebook_link = models.CharField(max_length=500, blank=True, null=True)
   instagram_link = models.CharField(max_length=500, blank=True, null=True)
@@ -21,19 +23,9 @@ class Researcher(models.Model):
   photo = models.ImageField(upload_to='photos/researchers/')
   is_cover = models.BooleanField()
 
+
   def __str__(self):
     return self.first_name
-
-class Article(models.Model):
-  title = models.CharField(max_length=100)
-  abstract = models.TextField(max_length=600)
-  published_at = models.DateField()
-  web_link = models.CharField(max_length=500)
-  researcher = models.ForeignKey(Researcher, on_delete=models.CASCADE)
-  first_author = models.BooleanField()
-
-  def __str__(self):
-    return self.title
 
 class Post(models.Model):
   title = models.CharField(max_length=100)
@@ -47,12 +39,32 @@ class Post(models.Model):
   def __str__(self):
     return self.title
 
+class Paper(models.Model):
+  title = models.CharField(max_length=100)
+  year = models.CharField(max_length=4)
+  web_link = models.CharField(max_length=600)
+  paper = models.CharField(max_length=100)
+
+  def __str__(self):
+    return self.title
+
+
 class ShortPost(models.Model):
   title = models.CharField(max_length=100)
   abstract = models.TextField(max_length=600)
   photo = models.ImageField(upload_to='photos/short_posts/')
   web_link = models.CharField(max_length=500)
   is_cover = models.BooleanField()
+
+  def __str__(self):
+    return self.title
+
+class Project(models.Model):
+  title =  models.CharField(max_length=500)
+  abstract = models.TextField(max_length=1000)
+  researcher = models.ForeignKey(Researcher, on_delete=models.CASCADE)
+  conservation = models.BooleanField()
+  breeding = models.BooleanField()
 
   def __str__(self):
     return self.title

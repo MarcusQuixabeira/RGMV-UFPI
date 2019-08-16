@@ -62,7 +62,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -101,6 +101,11 @@ b {
 
 i {
   font-style: italic;
+}
+
+div {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .footer-menu-item {

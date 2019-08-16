@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import ShortPost, Researcher, Post, Article
+from .models import ShortPost, Researcher, Post, Paper, Project
 
 
 def home(request):
@@ -22,10 +22,14 @@ def researchers(request):
 def researcher_detail(request, researcher_id):
   context = {}
   researcher = get_object_or_404(Researcher, pk=researcher_id)
-  articles = Article.objects.filter(researcher_id=researcher_id)
   context['researcher'] = researcher
-  context['articles'] = articles
   return render(request, 'portal/researcher/_detail.html', context)
+
+def papers(request):
+  papers = Paper.objects.all()
+  context = {'papers': papers
+  }
+  return render(request, 'portal/paper/_index.html', context)
 
 def posts(request):
   context = {}
@@ -40,3 +44,21 @@ def post_detail(request, post_id):
 def history(request):
   context = {}
   return render(request,'portal/history/_index.html', context)
+
+def projects(request):
+  projects =  Project.objects.all()
+  context = {'projects': projects
+  }
+  return render(request, 'portal/project/_index.html', context)
+
+def line_con(request):
+  context = {}
+  project_con = Project.objects.filter(conservation=True)
+  context['project_con'] = project_con
+  return render(request, 'portal/line/_index_con.html', context)
+
+def line_mel(request):
+  context = {}
+  project_mel = Project.objects.filter(breeding=True)
+  context['project_mel'] = project_mel
+  return render(request, 'portal/line/_index_mel.html', context)

@@ -1,0 +1,49 @@
+{% extends "portal/__base.html" %}
+
+{% load fontawesome %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col text-center">
+        <h2>Melhoramento Genético</h2>
+        <br>
+			<div class="col"><h5> Frente à indisponibilidade de cultivares de feijão-fava melhoradas no mercado nacional apresentando variabilidade para caracteres interessantes agronomicamente relacionados à arquitetura da planta, precocidade e produção de grãos, justifica-se a realização de mais pesquisas. Do ponto de vista do avanço do conhecimento científico e tecnológico, a seleção de genótipos com características relacionadas ao ideótipo da cultura tem grande importância para o desenvolvimento de cultivares melhoradas, a serem inseridas no sistema de produção, representando uma via potencial de desenvolvimento da cultura no Brasil.</h5></div>
+      </div>
+      <div class="col">
+  		<img src="/media/photos/lines/melhoramento_1.jpg" width="500" height="350">
+   	</div>
+    </div>
+ <hr class="featurette-divider">
+  <div class="row">
+    <div class="col">
+    	<h3> Projetos: </h3>
+      <div class="row mb-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">            
+              <div class="row">
+                {% for project in project_mel %}
+                <div class="row mb-5">
+                	<div class="col">
+                    <ul>
+                      <li>
+                        <h4>{{ project.title }} </h4> 
+                        <p> Pesquisador responsável: {{ project.researcher.first_name }} {{ project.researcher.last_name }}</p>
+                        <a href="{{ project.researcher.lattes_link }}" target="black">(Currículo Lattes)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <h5>{{ project.abstract}}</h5>
+                  </div>               
+                </div>
+                {% endfor %}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+{% endblock %}

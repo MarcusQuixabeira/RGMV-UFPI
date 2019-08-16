@@ -8,19 +8,22 @@
       <li class="nav-item {% if '/' not in request.path %} active {% endif %}">
         <a class="nav-link" href="/">Início</a>
       </li>
-      <li class="nav-item {% if 'posts' in request.path %} active {% endif %}">
-        <a class="nav-link" href="{% url 'portal:posts' %}">Publicações</a>
+      <li class="nav-item {% if 'papers' in request.path %} active {% endif %}">
+        <a class="nav-link" href="{% url 'portal:papers' %}">Publicações</a>
       </li>
       <li class="nav-item {% if 'researchers' in request.path %} active {% endif %}">
         <a class="nav-link" href="{% url 'portal:researchers' %}">Pesquisadores</a>
+      </li>
+      <li class="nav-item {% if 'projects' in request.path %} active {% endif %}">
+        <a class="nav-link" href="{% url 'portal:projects' %}">Projetos</a>
       </li>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Linhas de Pesquisa
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Conservação</a>
-            <a class="dropdown-item" href="#">Melhoramento</a>
+            <a class="dropdown-item" href="{% url 'portal:line_con' %}">Conservação</a>
+            <a class="dropdown-item" href="{% url 'portal:line_mel' %}">Melhoramento</a>
             <a class="dropdown-item" href="#">BAGF-UFPI</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Outras</a>

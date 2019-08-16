@@ -1,0 +1,44 @@
+{% extends "portal/__base.html" %}
+
+{% load fontawesome %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col text-center">
+        <h2>Projetos de pesquisa</h2>
+      </div>
+    </div>
+ <hr class="featurette-divider">
+  <div class="row">
+    <div class="col">
+      <div class="row mb-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              
+              	{% for project in projects %}
+                <div class="row mb-5">
+                	<div class="col">
+                    <ul>
+                      <li>
+                		    <h4>{{ project.title }} </h4>                        
+                        <p> Pesquisador responsável: {{ project.researcher.first_name }} {{ project.researcher.last_name }}</p>
+                        <a href="{{ project.researcher.lattes_link }}" target="black">(Currículo Lattes)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <h5>{{ project.abstract}}</h5>
+                  </div>               
+                </div>
+                {% endfor %}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+{% endblock %}

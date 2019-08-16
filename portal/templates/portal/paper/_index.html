@@ -1,0 +1,41 @@
+{% extends "portal/__base.html" %}
+
+{% load fontawesome %}
+
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col text-center">
+        <h2>Publicações Científicas</h2>
+      </div>
+    </div>
+ <hr class="featurette-divider">
+  <div class="row">
+    <div class="col">
+      <div class="row mb-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              
+              	{% for paper in papers %}
+                <div class="row mb-5">
+                	<div class="col">
+                    <ul>
+                      <li>                    
+                       <h2>{{ paper.title }} {{ paper.paper }} {{ paper.year }}</h2>
+                       <p> Acesso: {{ paper.web_link }} </p> 
+                       </li>               
+                       </ul>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+{% endblock %}

@@ -19,12 +19,13 @@
               
               	{% for researcher in researchers %}
                 <div class="row mb-5">
-                	<div class="col">
-                       <img src="{{ researcher.photo.url }}" alt="avatar" width="150" height="150">
-                    
+                	<div class="col"><a href="{% url 'portal:researcher_detail' researcher.id %}"
+                       ><img src="{{ researcher.photo.url }}" class="rounded-circle" alt="avatar" width="150" height="150"
+                            ></a>
                        <h2>{{ researcher.first_name }} {{ researcher.last_name }}</h2>
-                  
-                       <a href="{{researcher.lattes_link}}" target="black">(Currículo Lattes)</a>
+                       <p> Instituição: {{ researcher.institution.name }} </p>                 
+                       <p><a class="btn btn-secondary" href="{% url 'portal:researcher_detail' researcher.id %}" role="button">Saiba mais &raquo;</a></p>
+
                     </div>
                     
                 </div>
