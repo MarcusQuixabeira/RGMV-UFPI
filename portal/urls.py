@@ -13,5 +13,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('line_con/', views.line_con, name='line_con'),
     path('line_mel/', views.line_mel, name='line_mel'),
-    path('papers/', views.papers, name='papers'),
+    path('papers/', views.pubs, name='pubs'),
 ]

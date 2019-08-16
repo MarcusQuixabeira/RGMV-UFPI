@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col text-center">
-        <h2>Publicações Científicas</h2>
+        <h2>Publicações Recentes</h2>
       </div>
     </div>
  <hr class="featurette-divider">
@@ -15,17 +15,17 @@
       <div class="row mb-3">
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              
-              	{% for paper in papers %}
+            <div class="card-body">             
+              	{% for pub in pubs %}
                 <div class="row mb-5">
                 	<div class="col">
                     <ul>
-                      <li>                    
-                       <h2>{{ paper.title }} {{ paper.paper }} {{ paper.year }}</h2>
-                       <p> Acesso: {{ paper.web_link }} </p> 
-                       </li>               
-                       </ul>
+                      <li>
+                       <h4>{{ pub.title }}, {{ pub.year}}.</h4> 
+                         <h5> Periódico: {{ pub.paper }} </h5>
+                        <h5> Acesse aqui: <a href="{{ pub.link }}" target="blank"> {% fontawesome_icon 'file' li=False %}</a></h5>
+                     </li>
+                    </ul>                 
                     </div>
                     
                 </div>

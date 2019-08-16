@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import ShortPost, Researcher, Post, Paper, Project
+from .models import ShortPost, Researcher, Post, Project, Pub
 
 
 def home(request):
@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'portal/home/_home.html', context)
 
 def researchers(request):
-  researchers = Researcher.objects.all()
+  researchers = Researcher.objects.order_by("first_name").all()
   context = {'researchers':researchers
   }
   return render(request, 'portal/researcher/_index.html', context)
@@ -24,12 +24,6 @@ def researcher_detail(request, researcher_id):
   researcher = get_object_or_404(Researcher, pk=researcher_id)
   context['researcher'] = researcher
   return render(request, 'portal/researcher/_detail.html', context)
-
-def papers(request):
-  papers = Paper.objects.all()
-  context = {'papers': papers
-  }
-  return render(request, 'portal/paper/_index.html', context)
 
 def posts(request):
   context = {}
@@ -46,7 +40,7 @@ def history(request):
   return render(request,'portal/history/_index.html', context)
 
 def projects(request):
-  projects =  Project.objects.all()
+  projects =  Project.objects.order_by("researcher").all()
   context = {'projects': projects
   }
   return render(request, 'portal/project/_index.html', context)
@@ -62,3 +56,9 @@ def line_mel(request):
   project_mel = Project.objects.filter(breeding=True)
   context['project_mel'] = project_mel
   return render(request, 'portal/line/_index_mel.html', context)
+
+def pubs(request):
+  pubs = Pub.objects.all()
+  context = {'pubs': pubs
+  }
+  return render(request, 'portal/pub/_index.html', context)

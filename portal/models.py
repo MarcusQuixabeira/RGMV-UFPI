@@ -39,15 +39,6 @@ class Post(models.Model):
   def __str__(self):
     return self.title
 
-class Paper(models.Model):
-  title = models.CharField(max_length=100)
-  year = models.CharField(max_length=4)
-  web_link = models.CharField(max_length=600)
-  paper = models.CharField(max_length=100)
-
-  def __str__(self):
-    return self.title
-
 
 class ShortPost(models.Model):
   title = models.CharField(max_length=100)
@@ -65,6 +56,15 @@ class Project(models.Model):
   researcher = models.ForeignKey(Researcher, on_delete=models.CASCADE)
   conservation = models.BooleanField()
   breeding = models.BooleanField()
+
+  def __str__(self):
+    return self.title
+
+class Pub(models.Model):
+  title = models.CharField(max_length=100)
+  year = models.CharField(max_length=4)
+  link = models.CharField(max_length=600)
+  paper = models.CharField(max_length=100)
 
   def __str__(self):
     return self.title
