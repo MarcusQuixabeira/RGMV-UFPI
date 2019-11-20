@@ -145,3 +145,6 @@ body, button, input, select, textarea {
     font-size: 16px;
 }
 
+.font-up {
+  text-transform: uppercase;
+}

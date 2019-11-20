@@ -58,7 +58,7 @@ def line_mel(request):
   return render(request, 'portal/line/_index_mel.html', context)
 
 def pubs(request):
-  pubs = Pub.objects.all()
+  pubs = Pub.objects.order_by("-year").all()
   context = {'pubs': pubs
   }
   return render(request, 'portal/pub/_index.html', context)

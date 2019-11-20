@@ -1,9 +1,9 @@
 {% load fontawesome %}
 {% fontawesome_stylesheet %}
-<footer class="container-fluid text-light" style="background-color:  #1abc9c;">
+<footer class="container-fluid text-light" style="background-color:  rgba(50, 115, 220, 0.6);">
   <div class="row mt-3">
     <div class="col">
-    	<div class="row">
+    	<div class="row mt-3">
         <ul class="footer-menu">
         <li class="footer-menu-item">
         <a class="footer-menu-item-link" href="#" target="_blank">
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="row">
+      <div class="row mt-3">
         <div class="col">
           <a> Campus Universitário Ministro Petrônio Portela </a>
           <br>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="col">
-       <div class="row">
+       <div class="row mt-3">
        	    <div class="col">       		
        	        <h5>Acompanhe:</h5>
             </div>
@@ -62,7 +62,7 @@
             	<div class="row" style="font-size: 1.3rem;">
                <a href="https://instagram.com/rgmv_ufpi" target="blank">
                {% fontawesome_icon 'instagram' color="grey" large=True %}</a>
-                 </div>
+              </div>
                  <div class="row mt-3" style="font-size: 1.3rem;">
                  	<a href="#" target="blank">
                  	{% fontawesome_icon 'facebook-square' color="grey" large=True %}</a>
@@ -71,11 +71,11 @@
                   <a href="https://github.com/leocbc/RGMV-UFPI" target="blank">
                   {% fontawesome_icon 'github' color="grey" large=True %}</a>
                  </div>
+                 <div class="col"  style="font-size: 2.5rem;">
+                  <p class="float-right"><a href="#">{% fontawesome_icon 'angle-up' color="grey" %}</a></p>         
+                 </div>
             </div>
-        </div>        
-   </div>
-</div>
-<div class="col"  style="font-size: 2.5rem;">
-    <p class="float-right"><a href="#">{% fontawesome_icon 'angle-up' color="grey" %}</a></p>         
+       </div>        
+    </div>
 </div>
 </footer>

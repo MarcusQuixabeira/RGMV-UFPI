@@ -21,16 +21,14 @@
                 	<div class="col">
                     <ul>
                       <li>
-                       <h4>{{ pub.title }}, {{ pub.year}}.</h4> 
-                         <h5> Periódico: {{ pub.paper }} </h5>
+                        <h4>{{ pub.title }}, {{ pub.year}}.</h4> 
+                         <div class="font-up"> <h5> Periódico: {{ pub.paper }} </h5></div>
                         <h5> Acesse aqui: <a href="{{ pub.link }}" target="blank"> {% fontawesome_icon 'file' li=False %}</a></h5>
-                     </li>
+                      </li>
                     </ul>                 
-                    </div>
-                    
+                    </div>                    
                 </div>
-                {% endfor %}
-              
+                {% endfor %}              
             </div>
           </div>
         </div>
