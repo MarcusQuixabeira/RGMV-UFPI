@@ -1,7 +1,7 @@
 <!-- Three columns of text below the carousel -->
 <div class="row">
   {% for researcher in researchers %}
-    <div class="col-lg-4">
+    <div class="col-lg-6">
       <img src="{{ researcher.photo.url }}" class="rounded-circle" width="140" height="140" alt="photo">
       <h2>{{ researcher.first_name }} {{ researcher.last_name }}</h2>
       <p>{{ researcher.bio }}</p>

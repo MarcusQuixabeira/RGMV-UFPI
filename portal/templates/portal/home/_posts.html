@@ -1,6 +1,8 @@
 {% for post in posts %}
   <hr class="featurette-divider">
+
   <div class="row featurette">
+    
     <div class="col-md-7">
       <a href="{% url 'portal:post_detail' post.id %}" class="h2">{{ post.title }}.</a>
       <a href="{% url 'portal:post_detail' post.id %}" class="h4"><span class="text-muted"> {{ post.subtitle }}</span></a>

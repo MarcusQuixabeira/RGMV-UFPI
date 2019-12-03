@@ -26,7 +26,9 @@ def researcher_detail(request, researcher_id):
   return render(request, 'portal/researcher/_detail.html', context)
 
 def posts(request):
-  context = {}
+  posts = Post.objects.order_by("published_at").all()
+  context = {'posts': posts
+  }
   return render(request, 'portal/post/_index.html', context)
 
 def post_detail(request, post_id):
