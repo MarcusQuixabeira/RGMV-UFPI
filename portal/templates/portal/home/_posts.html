@@ -1,20 +1,19 @@
-{% for post in posts %}
-  <hr class="featurette-divider">
+<hr class="featurette-divider">
 <h2>Notícias</h2>
 <hr class="featurette-divider">
-  <div class="row">
-    
-    <div class="col-md-7">
-      <a href="{% url 'portal:post_detail' post.id %}" class="h2">{{ post.title }}.</a>
-      <a href="{% url 'portal:post_detail' post.id %}" class="h4"><span class="text-muted"> {{ post.subtitle }}</span></a>
-      <br>
-      <a href="{% url 'portal:post_detail' post.id %}" class="h5 lead"><p>{{ post.abstract }}</p></a>
-    </div>
-    <div class="col-md-5">
-      <a href="{% url 'portal:post_detail' post.id %}">
-        <img src="{{ post.cover.url }}"  class="featurette-image img-fluid mx-auto" width="500" height="500" alt="cover">
-      </a>
-    </div>
+{% for post in posts %}
+<div class="row">  
+  <div class="col-md-7">
+    <a href="{% url 'portal:post_detail' post.id %}" class="h2">{{ post.title }}.</a>
+    <a href="{% url 'portal:post_detail' post.id %}" class="h4"><span class="text-muted"> {{ post.subtitle }}</span></a>
+    <br>
+    <a href="{% url 'portal:post_detail' post.id %}" class="h5 lead"><p>{{ post.abstract }}</p></a>
   </div>
-  <hr class="featurette-divider">
+  <div class="col-md-5">
+    <a href="{% url 'portal:post_detail' post.id %}">
+      <img src="{{ post.cover.url }}"  class="featurette-image img-fluid mx-auto" width="500" height="500" alt="cover">
+    </a>
+  </div>
+</div>
 {% endfor %}
+<hr class="featurette-divider">
